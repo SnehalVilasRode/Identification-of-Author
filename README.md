@@ -1,31 +1,18 @@
-# Supervised_Author_Identification
- Use Supervised algorithms ( Naive Bayes, Support Vector Machine, Decision Tree ) to identify emails from the Enron corpus by their authors
- 
- 
- We’ll do something very similar in this project. We have a set of emails, half of which were written by one person and the other half by another person at the same company . Our objective is to classify the emails as written by one person or the other based only on the text of the email.
- 
- 
- 
- <h3>Naive Bayes</h3>
- <a href=https://github.com/Niranjani29/Supervised_Author_Identification/blob/master/nb_author_id.py>Naive Bayes</a>
-  We will start with Naive Bayes in this mini-project, and then expand in later projects to other algorithms.
+ In this project, I have used supervised algorithms to identify emails from the Enron corpus by their authors I started start with Naive Bayes, and then expand to other algorithms in later projects.
 
-We will start by giving you a list of strings. Each string is the text of an email, which has undergone some basic preprocessing; we will then provide the code to split the dataset into training and testing sets. (In the next lessons you’ll learn how to do this preprocessing and splitting yourself, but for now we’ll give the code to you).
+Naive Bayes is a good algorithm for text classification. When dealing with text, it is very common to treat each unique word as a feature. This makes for a large number of features, but the relative simplicity of the algorithm and the independent features assumption of Naive Bayes make it a strong performer for classifying texts.
 
-One particular feature of Naive Bayes is that it’s a good algorithm for working with text classification. When dealing with text, it’s very common to treat each unique word as a feature, and since the typical person’s vocabulary is many thousands of words, this makes for a large number of features. The relative simplicity of the algorithm and the independent features assumption of Naive Bayes make it a strong performer for classifying texts. 
+Support vector machines (SVMs) are another popular supervised algorithm. SVMs are more complex than Naive Bayes, but they can be more accurate. One way to speed up an SVM is to train it on a smaller training dataset. The tradeoff is that the accuracy almost always goes down when you do this.
 
-<h3>Support Vector Machine</h3>
-<a href=https://github.com/Niranjani29/Supervised_Author_Identification/blob/master/svm_author_id.py> SVM </a>
-   We’ll tackle the exact same email author ID problem as the Naive Bayes mini-project, but now with an SVM. What we find will help    clarify some of the practical differences between the two algorithms.
-  Import, create, train and make predictions with the sklearn SVC classifier. When creating the classifier, use a linear kernel (if you forget this step, you will be unpleasantly surprised by how long the classifier takes to train). 
-  One way to speed up an algorithm is to train it on a smaller training dataset. The tradeoff is that the accuracy almost always goes down when you do this. Let’s explore this more concretely: add in the following two lines immediately before training your classifier.
+Decision trees are another supervised algorithm. Decision trees are easy to understand and interpret, but they can be less accurate than other algorithms.
 
- features_train = features_train[:len(features_train)/100]
- labels_train = labels_train[:len(labels_train)/100]
+In this project, I have used all three of these algorithms to identify emails from the Enron corpus by their authors. compared the accuracy of the different algorithms and discuss the trade-offs between accuracy and speed.
 
- These lines effectively slice the training dataset down to 1% of its original size, tossing out 99% of the training data. You can leave all other code unchanged.
+Here are the steps involved in the project:
 
-
-<h3>Decision Tree</h3>
-<a href=https://github.com/Niranjani29/Supervised_Author_Identification/blob/master/dt_author_id.py> Decision Tree</a>
-     We will again try to identify the authors in a body of emails, this time using a decision tree. The starter code is in    decision_tree/dt_author_id.py.
+1) Preprocess the data. This involves cleaning the data and removing stop words.
+2) Split the data into training and testing sets.
+3) Train the different algorithms on the training set.
+4) Make predictions on the testing set.
+5) Evaluate the accuracy of the different algorithms.
+6) Used the scikit-learn library to implement the different algorithms.
